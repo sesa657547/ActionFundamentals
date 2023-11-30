@@ -1,0 +1,19 @@
+name: Hello, world
+description: Greet someone and record the time
+author: Github actions
+
+inputs:
+  who-to-greet:
+    description: who to greet
+    required: true
+    default: world
+
+outputs:
+  time:
+    description: Time we greeted you
+
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    INPUT_WHO_TO_GREET: ${{inputs.who-to-greet}}
